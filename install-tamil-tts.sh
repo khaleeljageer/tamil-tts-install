@@ -1,12 +1,12 @@
 #!/bin/bash
-DOWNLOAD_PATH=/home/ubuntu/tts/packages
-COMPILE_PATH=/home/ubuntu/tts/compiled
+DOWNLOAD_PATH=/home/khaleeljageer/Documents/TamilTTS/packages
+COMPILE_PATH=/home/khaleeljageer/Documents/TamilTTS/compiled
 
 
 #Register here http://htk.eng.cam.ac.uk/download.shtml and get a username and password
 
-HTKUSER=htkuserchennai
-HTKPASSWORD=sgqY=t=M
+HTKUSER=khaleeljageer
+HTKPASSWORD=Ujw9nts6
 
 
 sudo apt-get install  wget festival libx11-dev   build-essential g++-4.7 csh gawk bc sox tcsh default-jre  mp3wrap -y
