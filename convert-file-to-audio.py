@@ -23,7 +23,7 @@ os.system("mkdir " + out_dir)
 lines = open(input_file).readlines()
 
 count_of_lines = len(lines)
-digits = len(str(abs(count_of_lines))) +1 
+digits = len(str(abs(count_of_lines))) +1
 
 line_count = 1
 
@@ -35,10 +35,12 @@ for line in lines:
 	print command
 	os.system(command)
 	os.system("lame wav/1.wav " + out_dir + "/"   + str(line_count).zfill(digits) + ".mp3")
+	#os.system("ffmpeg -i wav/1.wav -map a -c copy " + out_dir + "/"   + str(line_count).zfill(digits) + ".mp3")
 	line_count = line_count + 1
 
 
 os.chdir(out_dir)
+#os.system("ffmpeg -f concat -safe 0 -i <(printf \"file '$PWD/%s'\n\" *.mp3) -c copy " + filename + ".mp3")
 os.system("cat *.mp3 > " + filename + ".mp3")
 os.system("rm 0*.mp3")
 
