@@ -34,15 +34,15 @@ for line in lines:
 	command = "./scripts/complete  '" + line + "' linux"
 	print command
 	os.system(command)
-	os.system("lame wav/1.wav " + out_dir + "/"   + str(line_count).zfill(digits) + ".mp3")
-	#os.system("ffmpeg -i wav/1.wav -map a -c copy " + out_dir + "/"   + str(line_count).zfill(digits) + ".mp3")
+	os.system("lame -q 0 -b 128 wav/1.wav " + out_dir + "/"   + str(line_count).zfill(digits) + ".wav")
 	line_count = line_count + 1
 
 
 os.chdir(out_dir)
-#os.system("ffmpeg -f concat -safe 0 -i <(printf \"file '$PWD/%s'\n\" *.mp3) -c copy " + filename + ".mp3")
-os.system("cat *.mp3 > " + filename + ".mp3")
-os.system("rm 0*.mp3")
+os.system("cat *.wav > "+filename+".wav")
+os.system("ffmpeg -f concat -safe 0 -i <(printf \"file '$PWD/%s'\n\" *.wav) -c copy"+filename+".wav")
+os.system("ffmpeg -i "+filename+".wav -codec:a libmp3lame -qscale:a 2 "+filename+".mp3")
+os.system("rm *.wav")
 
 finalPath = out_dir+"/"+filename+".mp3"
 audiofile = eyed3.load(finalPath)
