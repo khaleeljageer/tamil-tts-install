@@ -1,6 +1,6 @@
 # Tamil-TTS-install-script
 
-Author : T Shrinivasan <tshrinivasan@gmail.com>
+Author : Khaleel Jageer <jskcse4@gmail.com>
 
 
 This is a script to install the Tamil text to Speech System provided by IIT Madras and SSN College of Engineering at
@@ -18,7 +18,7 @@ No.
 
 
 ```
-git clone https://github.com/tshrinivasan/tamil-tts-install.git
+git clone https://github.com/khaleeljageer/tamil-tts-install.git
 
 cd tamil-tts-install
 
@@ -53,7 +53,7 @@ export FESTDIR=/usr
 
 
 cd COMPILE_PATH
-ssn_hts_demo/scripts/complete “தமிழ் வாழ்க” linux
+ssn_hts_demo/scripts/complete “உலக தொழிலாளர்களே ஒன்றுபடுங்கள்” linux
 
 ```
 
